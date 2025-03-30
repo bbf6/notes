@@ -1,6 +1,6 @@
 # notes (notes)
 
-Simple app for taking notes
+Simple app for notes
 
 ## Install the dependencies
 ```bash
