@@ -1,7 +1,12 @@
 <template lang="pug">
 q-card#editor-form(:class="{ open: noteStore.showEditor }")
   q-card-section
-    q-input(v-model="noteStore.newNote.title" label="Title" :dense="true")
+    q-input(
+      v-model="noteStore.newNote.title"
+      label="Title"
+      :dense="true"
+      input-class="note-title"
+    )
   q-card-section#text-area
     q-input(
       v-model="noteStore.newNote.text"
@@ -10,6 +15,7 @@ q-card#editor-form(:class="{ open: noteStore.showEditor }")
       autogrow
       borderless
       filled
+      input-class="note-text"
     )
   q-card-section.flex.justify-center
     q-btn.bg-primary.text-white(
@@ -38,4 +44,12 @@ const noteStore = useNoteStore()
 
 #text-area
   height: calc(100vh - 220px)
+
+.note-title
+  font-size: 20px
+  font-weight: bold
+
+.note-text
+  font-size: 18px
+  max-height: calc(100vh - 230px)
 </style>
