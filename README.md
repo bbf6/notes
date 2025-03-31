@@ -1,12 +1,17 @@
 # notes (notes)
 
-Simple app for notes
+Simple app for notes. I just happen to hate the adds on the notes apps available on the playstore so I did one from myself to myself.
 
 ## Install the dependencies
 ```bash
 yarn
 # or
 npm install
+```
+
+## Install the quasar CLI
+```bash
+npm i -g @quasar/cli
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
@@ -37,5 +42,7 @@ npm run format
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+### Build the app for Android
+```bash
+quasar build -m capacitor -T Android
+```
