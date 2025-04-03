@@ -19,12 +19,10 @@ export const useNoteStore = defineStore('note', {
   }),
   getters: {
     list (state) {
-      return state.notes
-        .sort((a, b) => a.date < b.date)
-        .map(n => ({
-          id: n.id,
-          title: shorten(n.title) || shorten(n.text)
-        }))
+      return state.notes.map(n => ({
+        id: n.id,
+        title: shorten(n.title) || shorten(n.text)
+      }))
     }
   },
   actions: {
@@ -32,6 +30,7 @@ export const useNoteStore = defineStore('note', {
       this.notes = this.notes.filter(n => n.id !== this.newNote.id)
       this.newNote.date = new Date()
       this.notes.push(this.newNote)
+      this.notes = this.notes.sort((a, b) => a.date < b.date)
       LocalStorage.set('notes', this.notes)
       this.closeEditor()
     },
