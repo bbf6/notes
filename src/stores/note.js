@@ -35,6 +35,7 @@ export const useNoteStore = defineStore('note', {
     },
     deleteNote () {
       this.notes = this.notes.filter(n => n.id !== this.newNote.id)
+      LocalStorage.set('notes', this.notes)
       this.closeEditor()
     },
     closeEditor () {
