@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { LocalStorage } from 'quasar'
 import uuidv4 from 'src/lib/uuid'
+import { shorten } from 'src/lib/format'
 
 const createNewNote = () => ({
   id: uuidv4(),
@@ -8,8 +9,6 @@ const createNewNote = () => ({
   text: '',
   date: new Date()
 })
-
-const shorten = text => text.length > 50 ? `${text.substr(0, 50)}...` : text
 
 export const useNoteStore = defineStore('note', {
   state: () => ({
@@ -32,6 +31,10 @@ export const useNoteStore = defineStore('note', {
       this.notes.push(this.newNote)
       this.notes = this.notes.sort((a, b) => a.date < b.date)
       LocalStorage.set('notes', this.notes)
+      this.closeEditor()
+    },
+    deleteNote () {
+      this.notes = this.notes.filter(n => n.id !== this.newNote.id)
       this.closeEditor()
     },
     closeEditor () {

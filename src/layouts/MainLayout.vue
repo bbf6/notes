@@ -4,7 +4,7 @@ q-layout(view="hHh lpR fFf")
     q-toolbar
       q-toolbar-title
         q-avatar(square)
-          img(src="~/assets/logo.svg")
+          img(src="~/assets/logo.png")
         |  Notes app
       q-icon.text-white(
         v-if="noteStore.showEditor"

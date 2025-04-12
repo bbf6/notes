@@ -5,7 +5,9 @@
       title-text-field
     q-card-section#text-area
       text-field
-    q-card-section.flex.justify-center
+    q-card-section.flex.justify-between
+      delete-button
+      close-button
       save-button
 </template>
 
@@ -14,6 +16,8 @@ import { useNoteStore } from 'src/stores/note'
 import TitleTextField from 'src/components/editorForm/TitleTextField'
 import TextField from 'src/components/editorForm/TextField'
 import SaveButton from 'src/components/editorForm/SaveButton'
+import CloseButton from 'src/components/editorForm/CloseButton'
+import DeleteButton from 'src/components/editorForm/DeleteButton'
 
 const noteStore = useNoteStore()
 </script>

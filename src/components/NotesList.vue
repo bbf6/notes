@@ -1,9 +1,5 @@
 <template lang="pug">
-q-list#list(
-  :class="{ open: !noteStore.showEditor }"
-  bordered
-  separator
-)
+q-list#list(:class="{ open: !noteStore.showEditor }")
   q-item(
     v-for="note in noteStore.list" :key="note.id"
     clickable
@@ -21,6 +17,10 @@ const noteStore = useNoteStore()
 
 <style lang="sass">
 #list
+  max-height: calc(100vh - 150px)
+  max-width: 100vw
+  overflow-y: auto
+  overflow-x: hidden
   background-color: $white
   flex: 1
   transform: translateY(-100vh)
