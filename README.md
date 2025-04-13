@@ -2,6 +2,8 @@
 
 Simple app for notes. I just happen to hate the adds on the notes apps available on the playstore so I did one from myself to myself.
 
+[./public/pic1.png] [./public/pic2.png] [./public/pic3.png]
+
 ## Install the dependencies
 ```bash
 yarn
